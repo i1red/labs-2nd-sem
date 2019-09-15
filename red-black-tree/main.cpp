@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <list>
-#include "C:\include\rbtree.h"
+#include "rbtree.h"
 using namespace std;
 
 template <typename T>
