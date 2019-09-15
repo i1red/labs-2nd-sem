@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MONOM_H
+#define MONOM_H
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -21,3 +23,5 @@ struct monom {
 	monom operator*(monom&);
 	monom operator+(monom&);
 };
+
+#endif
