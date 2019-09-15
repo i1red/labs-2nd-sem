@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CQUEUE_H
+#define CQUEUE_H
 
 #include <iostream>
 using namespace std;
@@ -75,3 +76,5 @@ public:
 		}
 	}
 };
+
+#endif
