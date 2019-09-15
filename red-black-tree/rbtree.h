@@ -69,7 +69,7 @@ private:
 			return dad->left == curr ? dad->right : dad->left;
 	}
 };
-//сторення вузла дерева
+
 template <typename T1, typename T2>
 rbtree<T1, T2>::node::node(T1 ky, T2 dt, bool dye, node *l, node *r) {
 	key = ky; data = dt; color = dye; left = l; right = r;
@@ -79,7 +79,7 @@ template <typename T1, typename T2>
 void rbtree<T1, T2>::node::copy(const node *other) {
 	key = other->key; data = other->data;  color = other->color; left = other->left; right = other->right;
 }
-//дерево
+
 template <typename T1, typename T2>
 rbtree<T1, T2>::rbtree() {
 	root = nullptr; bh = 0;
@@ -193,7 +193,6 @@ rbtree<T1, T2>::~rbtree() {
 	destruct(root);
 }
 
-//допоміжні функції
 template <typename T1, typename T2>
 void rbtree<T1, T2>::printer(nodeptr curr, const char *div)
 {
@@ -218,7 +217,6 @@ void rbtree<T1, T2>::destruct(nodeptr &curr) {
 		return;
 }
 
-//видалення вузла за покажчиками(на сам вузол, на батька)
 template <typename T1, typename T2>
 void rbtree<T1, T2>::removenode(nodeptr curr, nodeptr dad) {
 	if (curr->left && curr->right) {
@@ -260,7 +258,6 @@ void rbtree<T1, T2>::removenode(nodeptr curr, nodeptr dad) {
 	}
 }
 
-//балансування дерева після вставки та видалення
 template <typename T1, typename T2>
 void rbtree<T1, T2>::insertfixer(nodeptr curr, nodeptr dad) {
 	nodeptr grandp = father(dad);
@@ -395,7 +392,6 @@ void rbtree<T1, T2>::removefixer(nodeptr dblack, nodeptr dad) {
 	}
 }
 
-//повороти піддерева
 template <typename T1, typename T2>
 void rbtree<T1, T2>::left_rotation(nodeptr curr) {
 	nodeptr nwleft = new node(curr->key, curr->data, curr->color, curr->left, curr->right->left);
@@ -420,7 +416,6 @@ void rbtree<T1, T2>::right_rotation(nodeptr curr) {
 	curr->right = nwright;
 }
 
-//ф-ї для роботи з вузлом
 template <typename T1, typename T2>
 bool rbtree<T1, T2>::isred(nodeptr curr) {
 	if (!curr)
